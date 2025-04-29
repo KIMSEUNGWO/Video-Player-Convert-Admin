@@ -1,0 +1,530 @@
+/* 기본 CSS 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: #f5f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu ul {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.menu li {
+    padding: 0;
+    margin: 5px 0;
+}
+
+.menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.menu li.active a, .menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #3498db;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 15px;
+    font-size: 12px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 메인 콘텐츠 영역 */
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.thread-management {
+    position: relative;
+}
+
+/* 카드 스타일 */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+/* 테이블 스타일 */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* 상태 배지 */
+.status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-running {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-stopping {
+    background-color: #fff8e1;
+    color: #f57c00;
+}
+
+.status-stopped {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.status-disconnected {
+    background-color: #e0e0e0;
+    color: #616161;
+}
+
+/* 버튼 스타일 */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    outline: none;
+}
+
+.btn i {
+    margin-right: 6px;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: #f1f2f6;
+    color: #505a6d;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e9f2;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+}
+
+.btn-warning {
+    background-color: #f39c12;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #d35400;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    max-width: 90%;
+    position: relative;
+    z-index: 101;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {transform: translateY(-30px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+.modal-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 16px 20px;
+    border-top: 1px solid #eee;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* 폼 스타일 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group input {
+    flex: 1;
+}
+
+/* 관리 버튼 */
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #3498db;
+    font-size: 18px;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+.action-btn:hover {
+    color: #2980b9;
+}
+
+/* 액션 버튼 그룹 */
+.action-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* 체크박스 스타일 */
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+#modalThreadName {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-size: 14px;
+    font-weight: 500;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    max-width: 350px;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast-success {
+    border-left: 4px solid #2ecc71;
+}
+
+.toast-error {
+    border-left: 4px solid #e74c3c;
+}
+
+/* 로딩 인디케이터 */
+.loading-indicator {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 스레드 설정 관련 CSS */
+
+.settings-group {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.settings-group h4 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.thread-settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 576px) {
+    .thread-settings {
+        grid-template-columns: 1fr;
+    }
+}
+
+.setting-item {
+    margin-bottom: 15px;
+}
+
+.setting-item label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #505a6d;
+}
+
+.setting-item input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.setting-item input[type="number"]:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.setting-item .input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.setting-item .input-group input {
+    flex: 1;
+}
+
+.setting-item .input-group .btn {
+    white-space: nowrap;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.status-indicator .status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.status-indicator .status-dot.running {
+    background-color: #2ecc71;
+}
+
+.status-indicator .status-dot.stopping {
+    background-color: #f39c12;
+}
+
+.status-indicator .status-dot.stopped {
+    background-color: #e74c3c;
+}
+
+.status-indicator .status-dot.disconnected {
+    background-color: #95a5a6;
+}
+
+.status-indicator .status-text {
+    font-size: 14px;
+    font-weight: 500;
+}
